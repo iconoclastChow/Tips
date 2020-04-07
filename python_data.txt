@@ -1,5 +1,4 @@
 1、python六大数据类型：
-
   （1）三个可变数据类型：List、Set、Dictionary
     解释：变量所指向的内存地址处的值可以改变。
     举例：x=y=[1,2]，id(x)=2429731548808,id(y)=2429731524424。两次赋值在内存中相当于新建两个对象，因此对于可变类型，具有同样值的对象是不同的对象，
@@ -36,3 +35,5 @@
         增：list.append('a')，加到最后 ｜ list.insert(index, 'a')
         删：list.remove('a')，删除第一个'a' ｜ list.pop(index)，无index默认最后一个 ｜ del list[index]
         more: >>> help(list)
+        
+  （2）Tuple元组
