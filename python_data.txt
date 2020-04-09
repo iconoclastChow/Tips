@@ -50,6 +50,7 @@
       >>> more: help(tuple)。
 
    (3) Dictionary 字典(key->value)。value可以是任意对象，而key必须是不可变数据类型，且不能重复，否则被覆盖。
+      >>> create: graph = dict() | graph = {}
       >>> dict = {'hello': '你好', 'world': '世界'}
       >>> len(dict), str(dict)分别得到字典key数，和字符串输出数组。
 
