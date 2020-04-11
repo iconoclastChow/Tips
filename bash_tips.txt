@@ -53,3 +53,5 @@ Bourne-Again Shell(bash_tips)
 	echo   输出文本                       eg: echo '1' > 文件路径
 	tree   查看目录结构
 
+7、more
+	URL: https://www.jianshu.com/p/4f66b1468646
