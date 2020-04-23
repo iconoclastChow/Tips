@@ -51,6 +51,8 @@
 
    (3) Dictionary 字典(key->value)。value可以是任意对象，而key必须是不可变数据类型，且不能重复，否则被覆盖。
       >>> create: graph = dict() | graph = {}
+      >>> {x: x**2 for x in (2, 4, 6)}
+      >>> dict(Runoob=1, Google=2, Taobao=3)
       >>> dict = {'hello': '你好', 'world': '世界'}
       >>> len(dict), str(dict)分别得到字典key数，和字符串输出数组。
 
@@ -61,8 +63,9 @@
       >>> delete: del dict['hello'] | del dict | dict.clear()
       >>> more: help(dict)
 
-   (4) Set 集合，无序不重复集，基础功能：关系测试，重复元素消除。
-      >>> x = set('abcd')  # 单个字符组成
+   (4) Set 集合，无序不重复集，基础功能：关系测试，重复元素消除。可用大括号{}或者set（）创建
+                注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 是用来创建一个空字典
+      >>> x = set('abcd')、x = {'a', 'b', 'c', 'd'}  # 单个字符组成
       >>> y = set(['a', 'bc', 'd', '10']) # 列表元素组成
       >>> x -> {'a', 'b', 'c', 'd'}  
       >>> y -> {'a', 'bc', 'd', 10} 
