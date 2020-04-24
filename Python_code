@@ -125,7 +125,7 @@ date: 2020/4/23
                 读取第一行 1:www.runoob.com
                 读取的字符串为: 2:www
         其余：
-        1、fileObject.seek(offset[, whence])  # offset为偏移量常用0，whence为偏移位置（0为从头，1为当前，2为从尾部）
+        1、fileObject.seek(offset[, whence])  # offset为偏移量常用0，whence为偏移位置（0为从头，1为当前，2为从尾部),常用seek(0, 0)
         2、r读，w写，a追加，r+ w+ a+ 都是以读写方式打开，rb二进制读，wb二进制写，rb+ wb+ ab+二进制读写 
         3、read()读整个文件到String；readline()读取一行包括结束符，到String；readlines()读取整个文件，返回字符串列表，各元素为各行
         4、r只读，r+读写，不新建。w新建只写，w+新建读写，二者都会将文件内容清零。r+可读写，若文件不存在，报错；w+: 可读可写，若文件不存在，创建
