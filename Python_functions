@@ -1,16 +1,16 @@
 1、Math(数学常量pi、e)
   exp(x)	       返回e的x次幂(ex),如math.exp(1) 返回2.718281828459045
-  fabs(x)	       返回数字的绝对值，如math.fabs(-10) 返回10.0
+  fabs(x)	       返回数字的绝对值，如math.fabs(-10) 返回10.0    # absolute value function
   floor(x)       返回数字的下舍整数，如math.floor(4.9)返回 4
   log(x)	       如math.log(math.e)返回1.0,math.log(100,10)返回2.0
-  sqrt(x)	       返回数字x的平方根
-  pow(x, y)	     x**y 运算后的值。
+  sqrt(x)	       返回数字x的平方根  # square root
+  pow(x, y)	     x**y 运算后的值。  # power exponent
   max\min(x1, x2,...)	返回给定参数的最大\小值，参数可以为序列。
   
 2、random
   choice(seq)	   从序列的元素中随机挑选一个元素，比如random.choice(range(10))，从0到9中随机挑选一个整数。
   random()	     随机生成下一个实数，它在[0,1)范围内。
-  shuffle(lst)	 将序列的所有元素随机排序
+  shuffle(list)	 将序列的所有元素随机排序  # 洗牌，换位置
   uniform(x, y)	 随机生成下一个实数(浮点数)，它在[x,y]范围内。
   randrange ([start,] stop [,step])	从指定范围内，按指定基数递增的集合中获取一个随机数，基数默认值为 1
 
