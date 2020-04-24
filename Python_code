@@ -100,5 +100,63 @@ date: 2020/4/23
 		排序：for f in sorted(set(basket)):  # sorted并不修改原值，list.sort()改变原值
 		注意：result2 = sorted(my_dict, key=lambda x:my_dict[x])  # key后边加了一个函数，将函数值排序
 
+
 11、小技巧：
 	repr(int(math.pow(i, 3))).rjust(5)  # repr()返回string，math.pow()乘方，rjust(5, ' ')右对齐，默认为空格
+
+
+12、文件读写：
+        runoob.txt:
+                1:www.runoob.com
+                2:www.runoob.com
+                3:www.runoob.com
+                4:www.runoob.com
+                5:www.runoob.com
+        demo：
+                fo = open("runoob.txt", "r+")
+                print ("文件名为: ", fo.name)
+                line = fo.readline()
+                print ("读取第一行 %s" % (line))
+                line = fo.readline(5)
+                print ("读取的字符串为: %s" % (line))
+                fo.close()
+        result：
+                文件名为:  runoob.txt
+                读取第一行 1:www.runoob.com
+                读取的字符串为: 2:www
+        其余：
+        1、fileObject.seek(offset[, whence])  # offset为偏移量常用0，whence为偏移位置（0为从头，1为当前，2为从尾部）
+        2、r读，w写，a追加，r+ w+ a+ 都是以读写方式打开，rb二进制读，wb二进制写，rb+ wb+ ab+二进制读写 
+        3、read()读整个文件到String；readline()读取一行包括结束符，到String；readlines()读取整个文件，返回字符串列表，各元素为各行
+        4、r只读，r+读写，不新建。w新建只写，w+新建读写，二者都会将文件内容清零。r+可读写，若文件不存在，报错；w+: 可读可写，若文件不存在，创建
+        5、a附加写方式打开，不可读；a+:附加读写方式打开。
+        6、要关注指针位置，写文件之后，指针在末尾，读取的时候为空，这是需要用seek()或者close再open，把指针移到开始！
+        7、with open(filename, 'w+') as f:...自动关闭文件
+        8、file.tell()读出文件当前位置 
+        9、file.write('Contents')写入字符串，file.writelines(['first line\n', 'second line']), 写入字符串列表，如需换行，自己加入换行符\n
+
+
+13、异常：
+    try:  # 执行代码
+        runoob()
+    except AssertionError as error:  # 发生异常时执行
+        print(error)
+    else:  # 没有异常时执行
+        try: 
+            with open('file.log') as file:
+                read_data = file.read()
+        except FileNotFoundError as fnf_error:
+            print(fnf_error)
+    finally:  # 无论怎样都会执行
+        print('这句话，无论异常是否发生都会执行。')
+
+
+14、作用域：
+    Python的作用域一共有4种，分别是：
+    L（Local）：最内层，包含局部变量，比如一个函数/方法内部。
+    E（Enclosing）：包含了非局部(non-local)也非全局(non-global)的变量。
+        比如两个嵌套函数，一个函数（或类）A里面又包含了一个函数B，那么对于B中的名称来说A中的作用域就为nonlocal。
+    G（Global）：当前脚本的最外层，比如当前模块的全局变量。
+    B（Built-in）： 包含了内建的变量/关键字等，最后被搜索，如abs、exception等
+    规则顺序： L –> E –> G –> B。 
+    在局部找不到，便会去局部外的局部找（例如闭包），再找不到就会去全局找，再者去内置中找。
